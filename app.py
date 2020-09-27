@@ -15,14 +15,14 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    pregnancies = int(request.form['pregnancies'])
-    glucLevel = int(request.form['glucLevel'])
-    bloodPres = int(request.form['bloodPres'])
-    skinThick = int(request.form['skinThick'])
-    insulinLevel = int(request.form['insulinLevel'])
+    pregnancies = int(float(request.form['pregnancies']))
+    glucLevel = int(float(request.form['glucLevel']))
+    bloodPres = int(float(request.form['bloodPres']))
+    skinThick = int(float(request.form['skinThick']))
+    insulinLevel = int(float(request.form['insulinLevel']))
     bmi = float(request.form['bmi'])
     pedigreeFunc = float(request.form['pedigreeFunc'])
-    age = int(request.form['age'])
+    age = int(float(request.form['age']))
 
     scaledData = scaler.transform(np.array([[pregnancies, glucLevel, bloodPres, skinThick, insulinLevel, bmi, pedigreeFunc, age]]))
 
