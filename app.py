@@ -28,7 +28,7 @@ def predict():
 
     prediction = model.predict(scaledData)
 
-    if prediction == 1:
+    if prediction[0] == 1:
         return render_template('index.html', prediction_text='You are likely to have diabetes.')
     else:
         return render_template('index.html', prediction_text='You are safe.')
